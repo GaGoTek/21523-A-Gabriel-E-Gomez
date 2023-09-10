@@ -2,12 +2,13 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 const app = express()
 
-
-
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 //Middlewares
 app.use(cors()) //protocolo para permitir las cargas de recursos segun el origen de la solicitud
