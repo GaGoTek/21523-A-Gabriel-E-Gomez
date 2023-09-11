@@ -14,7 +14,7 @@ const port = process.env.PORT || 4000;
 
 //Middlewares
 app.use(cors()) //protocolo para permitir las cargas de recursos segun el origen de la solicitud
-app.use(morgan('common')) //Que obtenga informacion de las solicitudes al servidor
+app.use(morgan('combined')) //Que obtenga informacion de las solicitudes al servidor
 app.use(express.json()) //Que el servidor interprete codigo json
 
 //Archivos estáticos
