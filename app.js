@@ -5,12 +5,22 @@ const morgan = require('morgan');
 const path = require('path');
 const dotenv = require('dotenv')
 
+//Conexion a la Base de Datos
+const {sequelize} = require('./database');
+
+sequelize.authenticate()
+.then(()=> console.log("===> OK conexión a Base de Datos Establecida ===>"))
+.catch( err => console.log('===XXX Error al conectar Base de Datos:===', err))
+
+
 require('ejs');
 dotenv.config()
 
 const app = express()
 
 const port = process.env.PORT || 4000;
+
+
 
 //Middlewares
 app.use(cors()) //protocolo para permitir las cargas de recursos segun el origen de la solicitud
