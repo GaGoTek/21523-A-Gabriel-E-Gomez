@@ -8,6 +8,10 @@ const {
     obtenerPublicaciones, 
 } = require('../controllers/blog_controllers');
 
+//============================================================
+//RUTAS PARA RENDERIZAR VISTAS
+//============================================================
+
 router.get('/', (req, res)=> {
    res.render('home');
    res.send('Hello word')
@@ -16,6 +20,12 @@ router.get('/', (req, res)=> {
 // router.get('/', (req, res)=> {
 //     res.render('home')
 // })
+
+
+
+//============================================================
+//RUTAS PARA REALIZAR EL CRUD
+//============================================================
 
 
 //Crear Nueva Publicación
