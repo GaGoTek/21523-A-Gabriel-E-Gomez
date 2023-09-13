@@ -17,7 +17,7 @@ const PublicacionSchema = sequelize.define('Publicaciones', {
     },
     url_imagen: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
         //defaultValue: "John Doe"
       },
       fecha: {

@@ -39,7 +39,7 @@ app.set('view engine', 'ejs')
 
 //rutas
 app.use(require('./routes/blog.routes'))
-app.use(require('./routes/users.routes'))
+app.use(require('./routes/admin.routes'))
 
 
 app.listen(port, ()=> console.log(`Bienvenido, el servidor se está ejecutando en http://localhost:${port}`))

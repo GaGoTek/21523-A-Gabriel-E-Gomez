@@ -3,28 +3,37 @@ const Publicaciones = require('../models/Publicaciones');
 
 
 blogCtrl.crearPublicacion = async (req, res) => {
-    //Recibir datos por Body
-    const {
-        titulo,
-        contenido,
-        url_imagen,
-        fecha,
-     }= req.body;
+try {
+        //Recibir datos por Body
+        const {
+            titulo,
+            contenido,
+            url_imagen,
+            fecha,
+         }= req.body;
+       
+       console.log(`se ha insetado el siguiente texto en el titulo: ${titulo}`);
+       console.log(`se ha insetado el siguiente texto en el contenido: ${contenido}`);
+       console.log(`se ha insetado la siguiente url de imagen: ${url_imagen}`);
+       console.log(`se ha insetado el contenido en la fecha: ${fecha}`);
+    
+    
+       const publicacion = await Publicaciones.create(req.body)
+    
+    
+    
+        res.send({
+            msg: "Publicación creada con exito",
+            publicacion
+        }) 
+} catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      msg: "error al crear nueva publicación"  
+    })
    
-   console.log(`se ha insetado el siguiente texto en el titulo: ${titulo}`);
-   console.log(`se ha insetado el siguiente texto en el contenido: ${contenido}`);
-   console.log(`se ha insetado la siguiente url de imagen: ${url_imagen}`);
-   console.log(`se ha insetado el contenido en la fecha: ${fecha}`);
-
-
-   const publicacion = await Publicaciones.create(req.body)
-
-
-
-    res.send({
-        msg: "Publicación creada con exito",
-        publicacion
-    })   
+    
+}  
 }
 
 
@@ -62,6 +71,7 @@ blogCtrl.eliminarPublicacion = async (req, res) => {
 
     res.json({
         msg: `La publicación ${req.body.titulo} ha sido eliminada`
+        //alert(data.msg)
     })
 }
     
