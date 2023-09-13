@@ -31,4 +31,5 @@ formGuardar.addEventListener('submit', async (e)=>{
     const data = await response.json();
 
     alert(data.msg);
+    location.href = "/"
 })
