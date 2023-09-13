@@ -44,6 +44,14 @@ const publicaciones = await Publicaciones.findAll();
 res.json(publicaciones)
 }
 
+//Optener una publicación
+blogCtrl.obtenerPublicacion = async (req, res)=>{
+    const publicacion = await Publicaciones.findByPk(req.params.id)
+    return publicacion;
+
+
+}
+
 //Actualizo una publicacion
 blogCtrl.actualizarPublicacion = async (req, res) => {
 
@@ -60,6 +68,7 @@ blogCtrl.actualizarPublicacion = async (req, res) => {
     })
 }
 
+//Eliminar publicacion
 blogCtrl.eliminarPublicacion = async (req, res) => {
     const { id } = req.params;
     

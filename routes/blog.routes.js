@@ -4,7 +4,8 @@ const router = require('express').Router();
 const { 
     actualizarPublicacion,
     crearPublicacion,  
-    eliminarPublicacion,  
+    eliminarPublicacion,
+    obtenerPublicacion,  
     obtenerPublicaciones, 
 } = require('../controllers/blog_controllers');
 
@@ -35,9 +36,11 @@ router.post('/admin/publicacion', crearPublicacion)
 // //Obtener todas las Publicaciones
 router.get('/publicaciones', obtenerPublicaciones)
 
+// Obtener una publicación
+router.get('/publicacion/:id', obtenerPublicacion)
 
 // //Actualizar una Publicación
-router.put('/admin/publicacion/:id', actualizarPublicacion)
+router.put('/admin/editar/:id', actualizarPublicacion)
 
 
 // //Eliminar una Publicación
