@@ -8,6 +8,7 @@ const sequelize = new Sequelize('basemimuro', 'root', '', {
   });
 
 
+
 module.exports = {
 sequelize,
 Sequelize,

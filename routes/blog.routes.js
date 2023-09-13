@@ -1,27 +1,37 @@
 // se implemeta el enrutador de express
 const router = require('express').Router();
 
-router.get('/home', (req, res)=> {
-   res.render('home');
-//    res.send('Hello word')
-})
+const { 
+    actualizarPublicacion,
+    crearPublicacion,  
+    eliminarPublicacion,  
+    obtenerPublicaciones, 
+} = require('../controllers/blog_controllers');
 
 router.get('/', (req, res)=> {
-    res.render('home')
+   res.render('home');
+   res.send('Hello word')
 })
 
-router.post('/nueva-publicacion', function (req, res) {
-    //Recibir datos por Body
-    const {titulo, detalle }= req.body
-  
-   // TODO: SE DEBE guardar los datos en una base de datos
-   console.log(`se ha insetado el siguiente texto en el titulo: ${titulo}`);
-   console.log(`se ha insetado el siguiente texto en el detalle: ${detalle}`);
+// router.get('/', (req, res)=> {
+//     res.render('home')
+// })
 
-   return res.send({msg: "Publicación guardada con exito"})
-   
-   
 
-})
+//Crear Nueva Publicación
+router.post('/admin/publicacion', crearPublicacion)
+
+
+// //Obtener todas las Publicaciones
+router.get('/publicaciones', obtenerPublicaciones)
+
+
+// //Actualizar una Publicación
+router.put('/admin/publicacion/:id', actualizarPublicacion)
+
+
+// //Eliminar una Publicación
+router.delete('/admin/publicacion/:id', eliminarPublicacion)
+
 
 module.exports = router;

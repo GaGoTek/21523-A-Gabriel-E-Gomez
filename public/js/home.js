@@ -9,7 +9,7 @@ formGuardar.addEventListener('submit', async (e)=>{
 
     //Capturar datos del formulario
     const inputTitulo = document.querySelector('#titulo-post').value;
-    const inputDetalle = document.querySelector('#detalle-post').value;
+    const inputContenido = document.querySelector('#contenido-post').value;
 
     //Enviar datos al servidor
     // console.log(inputTitulo);
@@ -21,7 +21,7 @@ formGuardar.addEventListener('submit', async (e)=>{
         },
         body: JSON.stringify({
             titulo: inputTitulo,
-            detalle: inputDetalle
+            contenido: inputContenido
         })
     })
     const data = await response.json();
