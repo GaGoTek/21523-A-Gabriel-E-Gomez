@@ -2,9 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
-img {
+body {
+    background-image: url('../images/pared-de-ladrillo.jpg');
+    background-repeat:repeat;
+}
+
+#img-public {
     height: 200px;
     width: 200px;
+}
+
+#muro {
+    height: 800px;
+    width: 1400px; 
 }

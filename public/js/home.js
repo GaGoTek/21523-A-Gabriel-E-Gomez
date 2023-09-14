@@ -13,7 +13,7 @@ const mostrarPublicaciones = (publicaciones, elementoHtml) => {
         secciones += `
             <a href="#">
             <section class="d-flex gap-2">
-            <img src="${publicacion.url_imagen}" class="rounded" height=200 >
+            <img id="img-public" src="${publicacion.url_imagen}" class="rounded border border-0"  height=200 >
             <div class="d-flex flex-column justify-content-between">
                 <h5>${publicacion.titulo}</h5>
                 <p>${publicacion.contenido}</p>
