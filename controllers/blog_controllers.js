@@ -1,8 +1,8 @@
-const blogCtrl = {}
+
 const Publicaciones = require('../models/Publicaciones');
+const ctrl = {}
 
-
-blogCtrl.crearPublicacion = async (req, res) => {
+ctrl.crearPublicacion = async (req, res) => {
 try {
         //Recibir datos por Body
         const {
@@ -10,12 +10,14 @@ try {
             contenido,
             url_imagen,
             fecha,
+            autor,
          }= req.body;
        
        console.log(`se ha insetado el siguiente texto en el titulo: ${titulo}`);
        console.log(`se ha insetado el siguiente texto en el contenido: ${contenido}`);
        console.log(`se ha insetado la siguiente url de imagen: ${url_imagen}`);
        console.log(`se ha insetado el contenido en la fecha: ${fecha}`);
+       console.log(`se ha insetado el autor: ${autor}`);
     
     
        const publicacion = await Publicaciones.create(req.body)
@@ -38,14 +40,14 @@ try {
 
 
 //Consulto todos los registros de publicaciones
-blogCtrl.obtenerPublicaciones = async (req, res) => {
+ctrl.obtenerPublicaciones = async (req, res) => {
 
 const publicaciones = await Publicaciones.findAll();
 res.json(publicaciones)
 }
 
 //Optener una publicación
-blogCtrl.obtenerPublicacion = async (req, res)=>{
+ctrl.obtenerPublicacion = async (req, res)=>{
     const publicacion = await Publicaciones.findByPk(req.params.id)
     return publicacion;
 
@@ -53,7 +55,7 @@ blogCtrl.obtenerPublicacion = async (req, res)=>{
 }
 
 //Actualizo una publicacion
-blogCtrl.actualizarPublicacion = async (req, res) => {
+ctrl.actualizarPublicacion = async (req, res) => {
 
     const { id } = req.params;
     
@@ -69,7 +71,7 @@ blogCtrl.actualizarPublicacion = async (req, res) => {
 }
 
 //Eliminar publicacion
-blogCtrl.eliminarPublicacion = async (req, res) => {
+ctrl.eliminarPublicacion = async (req, res) => {
     const { id } = req.params;
     
     await Publicaciones.destroy({
@@ -88,4 +90,4 @@ blogCtrl.eliminarPublicacion = async (req, res) => {
 
 
 
-module.exports = blogCtrl;
+module.exports = ctrl;

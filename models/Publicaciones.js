@@ -1,42 +1,52 @@
-const {Sequelize, DataTypes, sequelize } = require('../database');
+const { DataTypes, sequelize } = require('../database');
 
 const PublicacionSchema = sequelize.define('Publicaciones', {
     // Definicion de modelo de atributos
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
     titulo: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    contenido: {
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+  },
+    contenido:{
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
     },
     url_imagen: {
         type: DataTypes.STRING,
         allowNull: false,
-        //defaultValue: "John Doe"
-      },
+        validate: {
+          notEmpty: true,
+        },
+    },
       fecha: {
         type: DataTypes.DATE,
-        allowNull: true
-        //defaultValue: DataTypes.NOW
-      }
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        },
+    },
+    autor:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
   }, {
     tableName: 'tabla_del_post',
-    timestamps: false
+    timestamps: false,
 
   });
 
 
-
-//   User.sync({force: true})
-//     .then(()=> {
-//         console.log("The table for the User was just (re)created!");
-//     })
-//     .catch(err => console.log(err);)
-
-module.exports = PublicacionSchema;
+  module.exports = PublicacionSchema;

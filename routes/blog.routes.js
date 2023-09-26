@@ -15,7 +15,7 @@ const {
 
 router.get('/', (req, res)=> {
    res.render('home');
-   res.send('Hello word')
+//    res.send('Hello word')
 })
 
 // router.get('/', (req, res)=> {

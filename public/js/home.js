@@ -18,6 +18,7 @@ const mostrarPublicaciones = (publicaciones, elementoHtml) => {
                 <h3 class="text-light">${publicacion.titulo}</h3>
                 <p  class="text-light">${publicacion.contenido}</p>
                 <p  class="text-light">${publicacion.fecha}</p>
+                <p  class="text-light fst-italic">Creado por ${publicacion.autor}</p>
             </div>
             </section>
         `
