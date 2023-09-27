@@ -16,12 +16,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const contenido = document.querySelector('#contenido-post')
     const url_imagen = document.querySelector('#url-img')
     const fecha = document.querySelector('#fecha')
+    const autor = document.querySelector('#autor')
 
 
     titulo.value = publicacion.titulo;
     contenido.value = publicacion.descripcion;
     url_imagen.value = publicacion.url_imagen;
     fecha.value = publicacion.fecha;
+    autor.value = publicacion.autor;
 
 
 })

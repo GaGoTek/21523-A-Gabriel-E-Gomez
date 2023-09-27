@@ -21,7 +21,7 @@ Siga estos pasos para ejecutar el proyecto en su máquina local:
 
 3. **Configurar la base de datos MySQL:** 
 
-   Cree una base de datos llamada `pruebabase` 
+   Cree una base de datos llamada `base_post` 
 
 4. **¨Puede agregar los siguientes datos en el archivo .example.env y cambie el nombre a .env:**
 ```
@@ -30,10 +30,10 @@ Siga estos pasos para ejecutar el proyecto en su máquina local:
    DIALECT_DB=mysql
    
 ```
-5. **Crear la tabla de la base de datos para los posteos con el nombre "tabla_del_post" con los siguientes datos para las columnas:**
+5. **Crear la tabla de la base de datos para los posteos con el nombre 'tabla_del_post' con los siguientes datos para las columnas:**
    
  ```
-   tabla_del_post / utf8_general_ci
+   'tabla_del_post' / utf8_general_ci
    id = int
    titulo = varchar 255
    contenido = text

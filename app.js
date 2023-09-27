@@ -35,10 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs')
 
 //modulos importados
-//const rutasBlog = require('./routes/blog.routes')
+//const rutasBlog = require('./routes/post.routes')
 
 //rutas
-app.use(require('./routes/blog.routes'))
+app.use(require('./routes/post.routes'))
 app.use(require('./routes/admin.routes'))
 
 
